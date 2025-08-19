@@ -36,6 +36,7 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
           <X className="w-7 h-7" />
         </div>
         <div>
+          Hello
           <div className="relative w-[150px] h-[150px] border border-white/50 bg-green-500  mx-auto rounded-full">
             <Image
               src="/iphone.jpg"
