@@ -1,6 +1,7 @@
 "use client";
 import Drawer from "@/essentials/Drawer";
 import { ModeToggle } from "@/essentials/ModeToggle";
+import { Menu } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -17,12 +18,15 @@ export default function NavBar() {
 
   return (
     <div className="relative">
-      <Drawer open={open} />
-      <div className="bg-accent py-3 px-18 fixed w-full">
+      <Drawer open={open} setOpen={setOpen} />
+      <div className="bg-accent py-3 px-10 sm:px-18 fixed w-full">
         <div className="flex justify-between items-center">
-          <p className="w-full" onClick={() => setOpen(!open)}>
+          <p className="w-full">
             Hello
           </p>
+          <div className={`md:hidden cursor-pointer transition-all duration-300`} onClick={() => setOpen(!open)}>
+            <Menu />
+          </div>
           <div className="hidden md:block">
             <div className="flex justify-end items-center w-full  cursor-pointer">
               <p
@@ -50,7 +54,7 @@ export default function NavBar() {
                     : "hover:bg-black/10 py-1 rounded-sm"
                 } px-5`}
               >
-                project
+                Project
               </p>
               <p
                 className={`${
@@ -59,7 +63,7 @@ export default function NavBar() {
                     : "hover:bg-black/10 py-1 rounded-sm"
                 } px-5`}
               >
-                skill
+                Skill
               </p>
               <p
                 className={`${
@@ -68,7 +72,7 @@ export default function NavBar() {
                     : "hover:bg-black/10 py-1 rounded-sm"
                 } px-5`}
               >
-                contact
+                Contact
               </p>
               <div className="ml-8">
                 <ModeToggle />
