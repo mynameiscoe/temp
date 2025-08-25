@@ -20,33 +20,38 @@ type DrawerOpen = {
 export default function Drawer({ open, setOpen }: DrawerOpen) {
   const { theme, setTheme } = useTheme();
   return (
-    <div>
+    <div className="flex">
       <div
-        className={`${
-          open ? "w-full" : "w-0"
-        } transition-all duration-300 backdrop-blur-lg bg-transparent min-h-screen fixed z-10 top-0 left-0`}
+        className={`fixed top-0 left-0 h-full w-full z-10 bg-transparent backdrop-blur-lg transition-opacity duration-300 ${
+          open
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
       ></div>
       <div
+        onClick={() => setOpen(false)}
         className={`${
           theme === "dark"
             ? "bg-gradient-to-t from-black to-gray-800 border border-white/20"
             : "bg-gradient-to-t from-gray-300 to-green-200 border border-l-gray-300"
-        } duration-al transition-all duration-300 ease-in-out  fixed z-10 min-h-screen top-0 right-0 overflow-hidden ${
+        } duration-al transition-all duration-300 ease-in-out  fixed z-10 h-full top-0 right-0 overflow-hidden ${
           open ? "w-[300px]" : "w-0"
         }`}
-        onClick={() => {
-          setOpen(false);
-        }}
       >
         <div
-          className={`flex justify-end py-3 pr-10 cursor-pointer ${
+          className={`flex justify-between  flex-row-reverse py-3 pr-[38px] mt-[-3px] pb-5 cursor-pointer ${
             open ? "opactiy-1" : "opacity-0"
           } transition-all duration-300`}
         >
-          <X className="w-7 h-7" />
+          <div onClick={() => setOpen(false)}>
+            <X className="w-7 h-7" />
+          </div>
+          <div className="ml-5 mt-[-3px]">
+            <ModeToggle />
+          </div>
         </div>
-        <div className="mt-8">
-          <div className="relative w-[120px] h-[120px] border border-white/50 bg-green-500  mx-auto rounded-full">
+        <div className={`${open ? "" : "translate-x-10 translate-y-[-40px]"} mt-6 transition-all duration-300`}>
+          <div className={`  relative w-[120px] h-[120px] border border-white/50 bg-green-500  mx-auto rounded-full`}>
             <Image
               src="/iphone.jpg"
               alt="Logo"
@@ -58,7 +63,8 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
             Lord Shenn
           </span>
         </div>
-        <div className="flex flex-col gap-3 items-start space-y-5 px-10 mt-8">
+        <div className="border my-5"></div>
+        <div className={`flex flex-col gap-3 items-start space-y-5 px-10 mt-8 transition-all duration-300 ${open ? "" : "translate-x-20 translate-y-[40px]"}`}>
           <div className="flex items-center space-x-5">
             <FontAwesomeIcon icon={faHouse} className="" size="lg" />
             <span>Home</span>
@@ -80,20 +86,25 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
             <span>Contact</span>
           </div>
         </div>
-        <div className="px-10 mt-5">
-          <ModeToggle />
-        </div>
-        <div className="flex justify-between  px-12 gap-5 mt-5">
-            <div className="bg-purple-500 w-9 h-9 rounded-full text-center flex justify-center items-center">
-              <FontAwesomeIcon icon={faViber} className="" size="lg" />
-            </div>
-            <div className="bg-blue-800 w-9 h-9 rounded-full text-center flex justify-center items-center">
-              <FontAwesomeIcon icon={faFacebook} className="" size="lg" />
-            </div>
-            <div className="bg-blue-500 w-9 h-9 rounded-full text-center flex justify-center items-center">
-              <FontAwesomeIcon icon={faTelegram} className="" size="lg" />
-            </div>
+        <div className="flex justify-between px-[41.5px] mt-8 w-full">
+          <div className="bg-purple-500 w-[34px] h-[34px] rounded-full text-center flex justify-center items-center">
+            <FontAwesomeIcon icon={faViber} className="text-white" size="lg" />
           </div>
+          <div className="bg-blue-800 w-[34px] h-[34px] rounded-full text-center flex justify-center items-center">
+            <FontAwesomeIcon
+              icon={faFacebook}
+              className="text-white"
+              size="lg"
+            />
+          </div>
+          <div className="bg-blue-500 w-[34px] h-[34px] rounded-full text-center flex justify-center items-center">
+            <FontAwesomeIcon
+              icon={faTelegram}
+              className="text-white"
+              size="lg"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
