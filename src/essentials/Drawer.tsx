@@ -1,4 +1,3 @@
-import { Apple, Bell, Home, Phone, User, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import React from "react";
@@ -12,7 +11,7 @@ import { faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 import { ModeToggle } from "./ModeToggle";
-// import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import { X } from "lucide-react";
 type DrawerOpen = {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -20,16 +19,16 @@ type DrawerOpen = {
 export default function Drawer({ open, setOpen }: DrawerOpen) {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="flex">
+    <div className="flex md:hidden">
       <div
-        className={`fixed top-0 left-0 h-full w-full z-10 bg-transparent backdrop-blur-lg transition-opacity duration-300 ${
+        className={`fixed top-0 left-0 h-full w-full bg-transparent z-10 backdrop-blur-lg transition-opacity duration-300 ${
           open
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
       ></div>
       <div
-        onClick={() => setOpen(false)}
+      onClick={() => setOpen(false)}
         className={`${
           theme === "dark"
             ? "bg-gradient-to-t from-black to-gray-800 border border-white/20"
@@ -39,7 +38,7 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
         }`}
       >
         <div
-          className={`flex justify-between  flex-row-reverse py-3 pr-[38px] mt-[-3px] pb-5 cursor-pointer ${
+          className={`flex justify-between  flex-row-reverse py-3 pr-[38px] mt-[-3px] pb-3 cursor-pointer ${
             open ? "opactiy-1" : "opacity-0"
           } transition-all duration-300`}
         >
@@ -50,8 +49,14 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
             <ModeToggle />
           </div>
         </div>
-        <div className={`${open ? "" : "translate-x-10 translate-y-[-40px]"} mt-6 transition-all duration-300`}>
-          <div className={`  relative w-[120px] h-[120px] border border-white/50 bg-green-500  mx-auto rounded-full`}>
+        <div
+          className={`${
+            open ? "" : "translate-x-20 translate-y-[-40px]"
+          } mt-6 transition-all duration-300`}
+        >
+          <div
+            className={` relative w-[120px] h-[120px] border border-white/50 bg-green-500  mx-auto rounded-full`}
+          >
             <Image
               src="/iphone.jpg"
               alt="Logo"
@@ -59,12 +64,16 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
               className="rounded-full object-cover p-[5px]"
             />
           </div>
-          <span className="flex justify-center mt-3 font-bold italic text-2xl">
-            Lord Shenn
+          <span className="flex justify-center mt-3 font-semibold italic text-2xl">
+            Chit Min Thu
           </span>
         </div>
-        <div className="border my-5"></div>
-        <div className={`flex flex-col gap-3 items-start space-y-5 px-10 mt-8 transition-all duration-300 ${open ? "" : "translate-x-20 translate-y-[40px]"}`}>
+        <div className={` border-[.5px]  mt-5`}></div>
+        <div
+          className={`flex flex-col gap-3 items-start space-y-5 px-10 mt-5 transition-all duration-300 ${
+            open ? "" : "translate-x-20 translate-y-[40px]"
+          }`}
+        >
           <div className="flex items-center space-x-5">
             <FontAwesomeIcon icon={faHouse} className="" size="lg" />
             <span>Home</span>
