@@ -28,7 +28,7 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
         }`}
       ></div>
       <div
-      onClick={() => setOpen(false)}
+        onClick={() => setOpen(false)}
         className={`${
           theme === "dark"
             ? "bg-gradient-to-t from-black to-gray-800 border border-white/20"
@@ -58,10 +58,10 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
             className={` relative w-[120px] h-[120px] border border-white/50 bg-green-500  mx-auto rounded-full`}
           >
             <Image
-              src="/iphone.jpg"
+              src="/temp.jpg"
               alt="Logo"
               fill
-              className="rounded-full object-cover p-[5px]"
+              className="rounded-full object-cover p-[5px] w-full h-full"
             />
           </div>
           <span className="flex justify-center mt-3 font-semibold italic text-2xl">
