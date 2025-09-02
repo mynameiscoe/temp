@@ -19,7 +19,7 @@ export default function NavBar() {
   return (
     <div className="relative">
       <Drawer open={open} setOpen={setOpen} />
-      <div className="bg-accent py-3 px-10 sm:px-18 fixed w-full">
+      <div className="bg-accent py-3 px-10 sm:px-18 fixed z-50 w-full">
         <div className="flex justify-between items-center">
           <p className="w-full">
             Hello
