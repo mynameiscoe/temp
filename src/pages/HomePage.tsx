@@ -17,84 +17,58 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="h-[650px] grid lg:grid-cols-2 w-full gap-20 mt-10">
-      <div className="h-[500px] flex justify-center items-center w-full">
-        <div className="flex flex-col">
-          {mounted && (
-            <span
-              className={` text-3xl font-semibold mb-[13px] ${
-                theme === "dark" ? "text-white/90" : "text-black/80"
-              } `}
-            >
-              Hello, my name is
-            </span>
-          )}
-          {mounted && (
-            <p className={` ${theme === "light" ? "loader" : ""}`}></p>
-          )}
-          {mounted && theme === "dark" && (
-            <p className="text-4xl font-semibold">Chit Min Thu</p>
-          )}
-          <div className="text-3xl font-bold mt-5 mb-5 italic">
-            <span>I'm a </span>
-            <span className="text-[#00CED1]">Frontend Developer</span>
-          </div>
-          <p className="mb-[2px]">
-            I'm a motivated junior frontend developer and
-          </p>
-          <p>I'm always learning and improving my skills.</p>
-          <div className="flex gap-5 mt-8 mb-4 w-full">
-            <div className="bg-[#00CED1] w-[34px] h-[34px] rounded-full text-center flex justify-center items-center">
-              <FontAwesomeIcon
-                icon={faViber}
-                className="text-black"
-                size="lg"
-              />
-            </div>
-            <div className="bg-[#00CED1] w-[34px] h-[34px] rounded-full text-center flex justify-center items-center">
-              <FontAwesomeIcon
-                icon={faFacebook}
-                className="text-black"
-                size="lg"
-              />
-            </div>
-            <div className="bg-[#00CED1] w-[34px] h-[34px] rounded-full text-center flex justify-center items-center">
-              <FontAwesomeIcon
-                icon={faTelegram}
-                className="text-black"
-                size="lg"
-              />
-            </div>
-          </div>
-          <a
-            href="#"
-            download
-            className="bg-[#00CED1] hover:bg-[#1db2b5] px-5 py-2 rounded-md shadow-lg text-black font-semibold text-center mt-5 w-[200px]"
+    <div className="flex justify-center items-center w-full mt-10 ">
+      <div className="flex flex-col">
+        {mounted && (
+          <span
+            className={` text-3xl font-semibold mb-[13px] ${
+              theme === "dark" ? "text-white/90" : "text-black/80"
+            } `}
           >
-            <div className="flex justify-between items-center">
-              <span>Download CV</span>
-              <ArrowDownToLine />
-            </div>
-          </a>
+            Hello, my name is
+          </span>
+        )}
+        {mounted && <p className={` ${theme === "light" ? "loader" : ""}`}></p>}
+        {mounted && theme === "dark" && (
+          <p className="text-5xl font-semibold">Chit Min Thu</p>
+        )}
+        <div className="text-3xl font-bold mt-5 mb-5 italic">
+          <span>I'm a </span>
+          <span className="text-orange-500">Frontend Developer</span>
         </div>
-      </div>
-
-      <div className="w-full h-ful flex">
-        <div className="h-[550px] lg:h-[500px] w-[400px] lg:w-[350px] mx-auto relative group flex">
-          <Image
-            src="/some.jpg"
-            alt="Second"
-            fill
-            className="object-cover transition-all duration-700 opacity-0 group-hover:opacity-100 group-hover:-rotate-0 rounded-3xl border-2 border-white/60 shadow-2xl shadow-white/60"
-          />
-
-          <Image
-            src="/temp.jpg"
-            alt="First"
-            fill
-            className="object-cover transition-all duration-700 group-hover:opacity-0 group-hover:rotate-[180deg] rounded-3xl border-2 border-[#00CED1] shadow-2xl shadow-[#00CED1]"
-          />
+        <p className="mb-[2px]">
+          I'm a motivated junior frontend developer and
+        </p>
+        <p>I'm always learning and improving my skills.</p>
+        <div className="flex gap-5 mt-8 mb-4 w-full">
+          <div className="bg-[#00CED1] w-[34px] h-[34px] rounded-full text-center flex justify-center items-center">
+            <FontAwesomeIcon icon={faViber} className="text-black" size="lg" />
+          </div>
+          <div className="bg-[#00CED1] w-[34px] h-[34px] rounded-full text-center flex justify-center items-center">
+            <FontAwesomeIcon
+              icon={faFacebook}
+              className="text-black"
+              size="lg"
+            />
+          </div>
+          <div className="bg-[#00CED1] w-[34px] h-[34px] rounded-full text-center flex justify-center items-center">
+            <FontAwesomeIcon
+              icon={faTelegram}
+              className="text-black"
+              size="lg"
+            />
+          </div>
         </div>
+        <a
+          href="#"
+          download
+          className="bg-[#00CED1] hover:bg-[#1db2b5] px-5 py-2 rounded-md shadow-lg text-black font-semibold text-center mt-5 w-[200px]"
+        >
+          <div className="flex justify-between items-center">
+            <span>Download CV</span>
+            <ArrowDownToLine />
+          </div>
+        </a>
       </div>
     </div>
   );

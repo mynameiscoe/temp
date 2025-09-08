@@ -17,14 +17,15 @@ export default function NavBar() {
   if (!mounted) return null;
 
   return (
-    <div className="relative">
+    <div className="relative mt-7 border-b border-t border-white/30 bg-gradient-to-r from-[#2B054E] via-[#3333] to-[#2B054E]  backdrop-blur-2xl shadow-lg ">
       <Drawer open={open} setOpen={setOpen} />
-      <div className="bg-accent py-3 px-10 sm:px-18 fixed w-full">
+      <div className="py-3 px-10 sm:px-18 w-full">
         <div className="flex justify-between items-center">
-          <p className="w-full">
-            Hello
-          </p>
-          <div className={`md:hidden cursor-pointer transition-all duration-300`} onClick={() => setOpen(!open)}>
+          <p className="w-full">Hello</p>
+          <div
+            className={`md:hidden cursor-pointer transition-all duration-300`}
+            onClick={() => setOpen(!open)}
+          >
             <Menu />
           </div>
           <div className="hidden md:block">
