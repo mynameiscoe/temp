@@ -33,7 +33,7 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
           theme === "dark"
             ? "bg-gradient-to-t from-black to-gray-800 border border-white/20"
             : "bg-gradient-to-t from-gray-300 to-green-200 border border-l-gray-300"
-        } duration-al transition-all duration-300 ease-in-out  fixed z-10 h-full top-0 right-0 overflow-hidden ${
+        } duration-al transition-all duration-300 ease-in-out  fixed z-10 h-screen top-0 right-0 overflow-hidden ${
           open ? "w-[300px]" : "w-0"
         }`}
       >
@@ -44,9 +44,6 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
         >
           <div onClick={() => setOpen(false)}>
             <X className="w-7 h-7" />
-          </div>
-          <div className="ml-5 mt-[-3px]">
-            <ModeToggle />
           </div>
         </div>
         <div

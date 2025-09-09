@@ -79,7 +79,7 @@
 }
 
 .dark {
-  --background: linear-gradient(to right, #000000, rgb(43,5,78),#000000);
+  --background: linear-gradient(to right, #000000, rgb(117, 44, 150), #000000);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -93,7 +93,7 @@
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
+  --destructive: oklch(70.216% 0.18922 22.207);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
@@ -128,9 +128,9 @@
 
 /* Hide scrollbar for IE, Edge, and Firefox */
 * {
-  -ms-overflow-style: none;     /* IE and Edge */
-  scrollbar-width: none;        /* Firefox */
-  scroll-behavior: smooth;      /* Optional: smooth scrolling */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth; /* Optional: smooth scrolling */
 }
 
 /* HTML: <div class="loader"></div> */
@@ -139,7 +139,8 @@
   font-weight: bold;
   font-family: roboto;
   font-size: 36px;
-  background: radial-gradient(circle closest-side,#000 94%,#0000) right/calc(200% - 1em) 100%;
+  background: radial-gradient(circle closest-side, #000 94%, #0000)
+    right/calc(200% - 1em) 100%;
   animation: l24 1s infinite alternate linear;
 }
 .loader::before {
@@ -147,11 +148,13 @@
   line-height: 1em;
   color: #0000;
   background: inherit;
-  background-image: radial-gradient(circle closest-side,#fff 94%,#000);
-  -webkit-background-clip:text;
-          background-clip:text;
+  background-image: radial-gradient(circle closest-side, #fff 94%, #000);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
-@keyframes l24{
-  100%{background-position: left}
+@keyframes l24 {
+  100% {
+    background-position: left;
+  }
 }

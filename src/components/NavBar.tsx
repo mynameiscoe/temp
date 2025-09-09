@@ -1,6 +1,5 @@
 "use client";
 import Drawer from "@/essentials/Drawer";
-import { ModeToggle } from "@/essentials/ModeToggle";
 import { Menu } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -17,9 +16,9 @@ export default function NavBar() {
   if (!mounted) return null;
 
   return (
-    <div className="relative mt-7 border-b border-t border-white/30 bg-gradient-to-r from-[#2B054E] via-[#3333] to-[#2B054E]  backdrop-blur-2xl shadow-lg ">
+    <div className="relative mt-0 md:mt-7 border-b border-t border-white/30 bg-gradient-to-r from-[#2B054E] via-[#3333] to-[#2B054E]  backdrop-blur-2xl shadow-lg">
       <Drawer open={open} setOpen={setOpen} />
-      <div className="py-3 px-10 sm:px-18 w-full">
+      <div className="py-4 md:py-5 px-10 sm:px-18 w-full">
         <div className="flex justify-between items-center">
           <p className="w-full">Hello</p>
           <div
@@ -75,9 +74,6 @@ export default function NavBar() {
               >
                 Contact
               </p>
-              <div className="ml-8">
-                <ModeToggle />
-              </div>
             </div>
           </div>
         </div>
