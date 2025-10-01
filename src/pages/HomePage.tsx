@@ -21,26 +21,26 @@ export default function HomePage() {
       <div className="flex flex-col">
         {mounted && (
           <span
-            className={` text-3xl font-semibold mb-[13px] ${
+            className={` text-2xl font-semibold mb-[13px] ${
               theme === "dark" ? "text-white/90" : "text-black/80"
             } `}
           >
-            Hello, my name is
+            Hello, name is
           </span>
         )}
         {mounted && <p className={` ${theme === "light" ? "loader" : ""}`}></p>}
         {mounted && theme === "dark" && (
-          <p className="text-5xl font-semibold">Chit Min Thu</p>
+          <p className="text-5xl font-bold gradient-text">Chit Min Thu</p>
         )}
         <div className="text-3xl font-bold mt-5 mb-5 italic">
           <span>I'm a </span>
-          <span className="text-orange-500">Frontend Developer</span>
+          <span className="gradient-text-developer">Frontend Developer</span>
         </div>
         <p className="mb-[2px]">
           I'm a motivated junior frontend developer and
         </p>
         <p>I'm always learning and improving my skills.</p>
-        <div className="flex gap-5 mt-8 mb-4 w-full">
+        {/* <div className="flex gap-5 mt-8 mb-4 w-full">
           <div className="bg-[#00CED1] w-[34px] h-[34px] rounded-full text-center flex justify-center items-center">
             <FontAwesomeIcon icon={faViber} className="text-black" size="lg" />
           </div>
@@ -58,17 +58,17 @@ export default function HomePage() {
               size="lg"
             />
           </div>
-        </div>
-        <a
+        </div> */}
+        {/* <a
           href="#"
           download
-          className="bg-[#00CED1] hover:bg-[#1db2b5] px-5 py-2 rounded-md shadow-lg text-black font-semibold text-center mt-5 w-[200px]"
+          className="bg-green-400 hover:bg-[#ffa2c0] px-5 py-2 rounded-md shadow-lg font-semibold text-center mt-5 w-[200px] text-black"
         >
           <div className="flex justify-between items-center">
             <span>Download CV</span>
             <ArrowDownToLine />
           </div>
-        </a>
+        </a> */}
       </div>
     </div>
   );

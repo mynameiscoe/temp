@@ -16,7 +16,7 @@ export default function NavBar() {
 
   if (!mounted) return null;
   return (
-    <div className="relative mt-7 border-b border-t border-white/30 bg-gradient-to-r from-[#3d0c6d] via-[#594e90] to-[#3d0c6d]  backdrop-blur-2xl shadow-lg ">
+    <div className="relative mt-7 border-b border-t border-white/30 bg-gradient-to-r from-[#3d0c6d] via-[#594e90] to-[#3d0c6d]  backdrop-blur-2xl shadow-lg">
       <Drawer open={open} setOpen={setOpen} />
       <div className="py-3 px-10 sm:px-18 w-full">
         <div className="flex justify-between items-center">
@@ -74,9 +74,9 @@ export default function NavBar() {
               >
                 Contact
               </p>
-              <div className="ml-8">
+              {/* <div className="ml-8">
                 <ModeToggle />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

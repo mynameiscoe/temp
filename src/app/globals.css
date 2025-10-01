@@ -156,3 +156,24 @@
 @keyframes l24{
   100%{background-position: left}
 }
+
+
+.gradient-text {
+  background: linear-gradient(180deg,  #ff6ec4, #ffa2c0);
+  
+  -webkit-background-clip: text;  
+  background-clip: text;          
+ 
+  -webkit-text-fill-color: transparent;  
+  color: transparent;                     
+}
+
+.gradient-text-developer {
+  background: linear-gradient(180deg,  #00f2fe, #4facfe);
+  
+  -webkit-background-clip: text;  
+  background-clip: text;          
+ 
+  -webkit-text-fill-color: transparent;  
+  color: transparent;                     
+}
