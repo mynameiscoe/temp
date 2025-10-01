@@ -1,6 +1,5 @@
 "use client";
 import Drawer from "@/essentials/Drawer";
-import { ModeToggle } from "@/essentials/ModeToggle";
 import { Menu } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -9,9 +8,9 @@ export default function NavBar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
-
   useEffect(() => {
     setMounted(true);
+    setTheme("dark")
   }, []);
 
   if (!mounted) return null;
@@ -27,7 +26,7 @@ export default function NavBar() {
           >
             <Menu />
           </div>
-          <div className="hidden md:block">
+          <div  onClick={() =>setTheme("dark")} className="hidden md:block">
             <div className="flex justify-end items-center w-full  cursor-pointer">
               <p
                 className={`${
@@ -74,9 +73,7 @@ export default function NavBar() {
               >
                 Contact
               </p>
-              {/* <div className="ml-8">
-                <ModeToggle />
-              </div> */}
+             
             </div>
           </div>
         </div>

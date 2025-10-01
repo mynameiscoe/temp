@@ -1,12 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import { faViber } from "@fortawesome/free-brands-svg-icons";
-import { faTelegram } from "@fortawesome/free-brands-svg-icons";
-import { ArrowDownToLine, Download } from "lucide-react";
+
 
 export default function HomePage() {
   const { theme, setTheme } = useTheme();
@@ -14,6 +9,7 @@ export default function HomePage() {
 
   useEffect(() => {
     setMounted(true);
+    setTheme("dark");
   }, []);
 
   return (
@@ -33,13 +29,13 @@ export default function HomePage() {
           <p className="text-5xl font-bold gradient-text">Chit Min Thu</p>
         )}
         <div className="text-3xl font-bold mt-5 mb-5 italic">
-          <span>I'm a </span>
+          <span>I&apos;m a </span>
           <span className="gradient-text-developer">Frontend Developer</span>
         </div>
         <p className="mb-[2px]">
-          I'm a motivated junior frontend developer and
+          I&apos;m a motivated junior frontend developer and
         </p>
-        <p>I'm always learning and improving my skills.</p>
+        <p>I&apos;m always learning and improving my skills.</p>
         {/* <div className="flex gap-5 mt-8 mb-4 w-full">
           <div className="bg-[#00CED1] w-[34px] h-[34px] rounded-full text-center flex justify-center items-center">
             <FontAwesomeIcon icon={faViber} className="text-black" size="lg" />

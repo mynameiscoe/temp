@@ -1,5 +1,5 @@
 "use client";
-
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -17,7 +17,6 @@ import {
   faFolderOpen,
   faTrophy,
 } from "@fortawesome/free-solid-svg-icons";
-import { ModeToggle } from "./ModeToggle";
 import { X } from "lucide-react";
 
 type DrawerOpen = {
@@ -75,7 +74,6 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
             className="w-7 h-7 cursor-pointer"
             onClick={() => setOpen(false)}
           />
-          {/* <ModeToggle /> */}
         </div>
 
         <div
@@ -121,21 +119,19 @@ export default function Drawer({ open, setOpen }: DrawerOpen) {
   );
 }
 
-function DrawerItem({ icon, text }: { icon: any; text: string }) {
+function DrawerItem({ icon, text }: { icon: IconDefinition; text: string }) {
   return (
     <div className="flex items-center space-x-5">
-      <FontAwesomeIcon icon={icon} size="lg" />
       <span>{text}</span>
     </div>
   );
 }
 
-function SocialIcon({ icon, color }: { icon: any; color: string }) {
+function SocialIcon({ icon, color }: { icon: IconDefinition; color: string }) {
   return (
     <div
       className={`${color} w-[34px] h-[34px] rounded-full flex justify-center items-center`}
     >
-      <FontAwesomeIcon icon={icon} className="text-white" size="lg" />
     </div>
   );
 }
